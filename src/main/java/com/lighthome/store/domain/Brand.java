@@ -69,7 +69,7 @@ public class Brand implements Serializable {
 		this.items = items;
 	}
 
-	
+//	
 //	@Column(name="COUNT", insertable=false, updatable=false)
 //	public int getCount() {
 //		return count;
