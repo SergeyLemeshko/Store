@@ -1,11 +1,11 @@
 angular.
-	module('brandList').
+	module('brandList', ['ui.router']).
 	component('brandList', {
 		templateUrl:"resources/scripts/app/brand-list/brand_list_template.html",
-		controller: function BrandListController($routeParams, $http) {
+		controller: function BrandListController($stateParams, $http) {
 			
 			var self = this;
-			$http.get('category/' + $routeParams.category).then(function successCallback(response) {
+			$http.get('category/' + $stateParams.category).then(function successCallback(response) {
 				self.brands = response.data.brands;
 			});
 		}

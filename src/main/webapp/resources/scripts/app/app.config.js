@@ -1,13 +1,26 @@
 angular.
-	module('storeApp').
-	config(function config($locationProvider, $routeProvider) {
-		
-			$locationProvider.hashPrefix('!');
+	module('storeApp', ['ui.router', 'categoryList','brandList']).
+		config(function config($stateProvider, $urlRouterProvider) {
 			
-			$routeProvider.
-			when('/category/:category', {
-				template:'<brand-list></brand-list>'
-			}).
-			otherwise('/');
-		}
+				$urlRouterProvider.otherwise('/');
+				
+				$stateProvider
+					.state('category', {
+						url:"/",
+						views:{
+							'category': {
+								template:'<category-list></category-list>'
+							}
+						}
+					})
+					.state('category.brand', {
+						url:"category/:category",
+						views:{
+							'brand@':{
+								template:'<brand-list></brand-list>'
+							}
+						}
+				 })
+			}
 	);
+

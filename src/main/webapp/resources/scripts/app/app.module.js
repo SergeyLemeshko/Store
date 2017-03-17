@@ -1,2 +1,4 @@
-angular.module('storeApp', ['categoryList', 'ngRoute', 'brandList']);
+angular.module('storeApp', ['ui.router', 'categoryList','brandList']);
+
+
 

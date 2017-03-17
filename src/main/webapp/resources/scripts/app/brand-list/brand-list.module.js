@@ -1,1 +1,1 @@
-angular.module('brandList', ['ngRoute']);
+angular.module('brandList', ['ui.router']);

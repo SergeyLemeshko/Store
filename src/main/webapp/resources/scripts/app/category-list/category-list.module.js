@@ -1,1 +1,1 @@
-angular.module('categoryList', []);
+angular.module('categoryList', ['ui.router']);

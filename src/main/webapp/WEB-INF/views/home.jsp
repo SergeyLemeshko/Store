@@ -13,9 +13,10 @@
 		
 		<spring:url	value="/resources/styles/standard.css" var="standard_css_url" />
 		<spring:url	value="/resources/scripts/jscripts.js" var="jscripts_url" />
-		
+			
 		<spring:url	value="/resources/scripts/angular.min.js" var="angular_url" />
-		<spring:url	value="/resources/scripts/angular-route.min.js" var="angular_route_url" />
+ 		<spring:url	value="/resources/scripts/angular-route.min.js" var="angular_route_url" /> 
+		<spring:url	value="/resources/scripts/angular-ui-router.js" var="angular_ui_router_url" />
 		
 		<spring:url	value="/resources/scripts/app/app.module.js" var="app_url" />
         <spring:url	value="/resources/scripts/app/app.config.js" var="app_config_url" /> 
@@ -30,8 +31,8 @@
 		<script src="${jquery_url}" type="text/javascript "><jsp:text/></script>
 		<script src="${bootstrap_url}" type="text/javascript"><jsp:text/></script>
 		<script src="${angular_url}" type="text/javascript"><jsp:text/></script>
-		<script src="${angular_route_url}" type="text/javascript"><jsp:text/></script>
-		
+		<script src="${angular_ui_router_url}" type="text/javascript"><jsp:text/></script>
+				
 		
 		<script src="${category_list_module_url}" type="text/javascript"><jsp:text/></script>
 		<script src="${category_list_component_url}" type="text/javascript"><jsp:text/></script>
@@ -50,8 +51,9 @@
 	</head>
 	
 	<body>
-	   <category-list></category-list>
-	   <div ng-view ></div>
+		<div ui-view="category"></div>
+		<div ui-view="brand"></div>
+	 
 <!-- 	   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation"> -->
 <!-- 	      <div class="container"> -->
 <!-- 	        <div class="navbar-header"> -->
