@@ -24,6 +24,8 @@
 		<spring:url	value="/resources/scripts/app/category-list/category-list.module.js" var="category_list_module_url" />
 		<spring:url	value="/resources/scripts/app/brand-list/brand-list.component.js" var="brand_list_component_url" />
 		<spring:url	value="/resources/scripts/app/brand-list/brand-list.module.js" var="brand_list_module_url" />
+		<spring:url	value="/resources/scripts/app/item-list/item-list.component.js" var="item_list_component_url" />
+		<spring:url	value="/resources/scripts/app/item-list/item-list.module.js" var="item_list_module_url" />
 		
 		
 		<link rel="stylesheet" type="text/css" media="screen" href="${bootstrap_css_url}" />
@@ -38,6 +40,8 @@
 		<script src="${category_list_component_url}" type="text/javascript"><jsp:text/></script>
 		<script src="${brand_list_module_url}" type="text/javascript"><jsp:text/></script>
 		<script src="${brand_list_component_url}" type="text/javascript"><jsp:text/></script>
+		<script src="${item_list_module_url}" type="text/javascript"><jsp:text/></script>
+		<script src="${item_list_component_url}" type="text/javascript"><jsp:text/></script>
 		<script src="${app_url}" type="text/javascript"><jsp:text/></script>	
         <script src="${app_config_url}" type="text/javascript"><jsp:text/></script>	
 		
@@ -53,61 +57,32 @@
 	<body>
 		<div ui-view="category"></div>
 		<div ui-view="brand"></div>
-	 
-<!-- 	   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation"> -->
-<!-- 	      <div class="container"> -->
-<!-- 	        <div class="navbar-header"> -->
-<%-- 	            <a class="navbar-brand" href="#"><spring:message code="label.items_category" /></a> --%>
-<!-- 	        </div> -->
-<%-- 	      	<c:if test="${!empty itemsCategory}"> --%>
-<!-- 	          	<div class="collapse navbar-collapse"> -->
-<!-- 	         		 <ul class="nav navbar-nav" id="categoryContainer"> -->
-<%-- 						<c:forEach items="${itemsCategory}" var="item"> --%>
-<%--                             <li class="${item.id == category ? 'active' : ''}"><a data-ref="${pageContext.request.contextPath}/category/${item.id}" href="#" >${item.name}</a></li> --%>
-<%-- 						</c:forEach> --%>
-<!-- 					</ul> -->
-<!-- 	       		</div> -->
-<%-- 			</c:if> --%>
-			
-<!-- 	      </div> -->
-<!-- 	    </div> -->
-<!-- 	    <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation"> -->
-<!-- 	          <div class="list-group" id="brandContainer"> -->
-<!-- 	          </div> -->
-<!--         </div> -->
-	    <div class="container">
-	    	<div class="row row-offcanvas row-offcanvas-left">
-				<div class="col-xs-12 col-sm-9" >
-					<div id="brandDescription"></div>
-				    <c:if test="${brand.description != null}">
-				    	<div class="jumbotron">
-				            <p>${brand.description}</p>
-				        </div>
-			        </c:if>
-		    		<div class="row" id="itemRow">
-   				  </div>
+		<div ui-view="item"></div>
+
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+					</div>
+					<div class="modal-body">
+						<img class="center-block itemSmallImage" id="myModalImage"
+							alt="...">
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary">Save
+								changes</button>
+						</div>
+					</div>
 				</div>
 			</div>
-	  </div>
-	  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span aria-hidden="true">&times;</span>
-		        </button>
-		        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-		      </div>
-		      <div class="modal-body">
-		      	<img class="center-block itemSmallImage" id="myModalImage"  alt="...">
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-		        <button type="button" class="btn btn-primary">Save changes</button>
-		      </div>
-		     </div>
-		   </div>
 		</div>
-	</div>
 	</body>
 	<script src="${jscripts_url}" type="text/javascript"><jsp:text/></script>
 	<script type="text/javascript">

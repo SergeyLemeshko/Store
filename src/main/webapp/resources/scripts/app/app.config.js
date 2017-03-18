@@ -1,5 +1,5 @@
 angular.
-	module('storeApp', ['ui.router', 'categoryList','brandList']).
+	module('storeApp', ['ui.router', 'categoryList','brandList', 'itemList']).
 		config(function config($stateProvider, $urlRouterProvider) {
 			
 				$urlRouterProvider.otherwise('/');
@@ -20,7 +20,16 @@ angular.
 								template:'<brand-list></brand-list>'
 							}
 						}
-				 })
+				    })
+				    .state('category.brand.item', {
+				    	url:"/brand/:brand",
+				    	views:{
+				    		'item@':{
+				    			template:'<item-list></item-list>'
+				    		}
+				    	}
+				    })
+				    
 			}
 	);
 

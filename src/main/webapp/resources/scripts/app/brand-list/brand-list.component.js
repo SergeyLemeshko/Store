@@ -5,6 +5,7 @@ angular.
 		controller: function BrandListController($stateParams, $http) {
 			
 			var self = this;
+			self.category = $stateParams.category;
 			$http.get('category/' + $stateParams.category).then(function successCallback(response) {
 				self.brands = response.data.brands;
 			});

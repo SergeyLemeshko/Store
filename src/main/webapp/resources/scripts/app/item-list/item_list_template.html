@@ -1,0 +1,20 @@
+<div class="container">
+  	<div class="row row-offcanvas row-offcanvas-left">
+		<div class="col-xs-12 col-sm-9" >
+			<div id="brandDescription">
+				<div class="jumbotron"><p>{{$ctrl.description}}</p></div>
+			</div>
+			<div class="row" >
+				<div class="col-sm-6 col-md-3" ng-repeat="item in $ctrl.items">
+					<a class="thumbnail" href=# data-toggle="modal" data-target="#myModal">
+						<img class="itemSmallImage" src="resources/images/{{item.image}}"   alt="...">
+				    	<div class="caption">
+				        	<h3>{{item.name}}</h3> 
+				        	<p>{{item.description}}</p>
+				    	</div>
+				    </a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
