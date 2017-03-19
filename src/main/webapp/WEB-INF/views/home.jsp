@@ -12,10 +12,8 @@
 		<spring:url	value="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" var="bootstrap_css_url" />
 		
 		<spring:url	value="/resources/styles/standard.css" var="standard_css_url" />
-		<spring:url	value="/resources/scripts/jscripts.js" var="jscripts_url" />
 			
 		<spring:url	value="/resources/scripts/angular.min.js" var="angular_url" />
- 		<spring:url	value="/resources/scripts/angular-route.min.js" var="angular_route_url" /> 
 		<spring:url	value="/resources/scripts/angular-ui-router.js" var="angular_ui_router_url" />
 		
 		<spring:url	value="/resources/scripts/app/app.module.js" var="app_url" />
@@ -48,45 +46,12 @@
 		<spring:theme code="styleSheet" var="app_css" />
 		<spring:url value="/${app_css}" var="app_css_url" />
 		<link rel="stylesheet"  href="${app_css_url}" />
-		
-		
-		<spring:url value="/resources/images" var="images" />
-		
+			
 	</head>
 	
 	<body>
 		<div ui-view="category"></div>
 		<div ui-view="brand"></div>
 		<div ui-view="item"></div>
-
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-			aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-					</div>
-					<div class="modal-body">
-						<img class="center-block itemSmallImage" id="myModalImage"
-							alt="...">
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary"
-								data-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-primary">Save
-								changes</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 	</body>
-	<script src="${jscripts_url}" type="text/javascript"><jsp:text/></script>
-	<script type="text/javascript">
-			 var requestContextPath = '${pageContext.request.contextPath}';
-			 var imagesPath = requestContextPath + "/resources/images";
-	</script> 
 </html>

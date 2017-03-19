@@ -2,15 +2,10 @@ angular.
 	module('categoryList', ['ui.router']).
 	component('categoryList', {
 		templateUrl:"resources/scripts/app/category-list/categories_template.html",
-		controller: function CategoryListController($http, $stateParams) {
+		controller: function CategoryListController($http, $stateParams, $scope) {
 			
-			var self = this;
-					
-			$http({
-				method:'GET',
-				url:requestContextPath + '/category'
-			}).then(function successCallback(response) {
-				self.categories = response.data.categories;
+			$http.get('category/').then(function successCallback(response) {
+				$scope.categories = response.data.categories;
 			})
 		}
 	});
