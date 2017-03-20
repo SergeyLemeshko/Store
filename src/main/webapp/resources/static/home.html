@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="storeApp">
+	<head>
+		<meta charset=utf-8" />
+		<title>Store</title>
+		
+		<link rel="stylesheet" type="text/css" href="resources/styles/standard.css" />
+		<link rel="stylesheet" type="text/css" href="resources/styles/bootstrap.css" />
+				
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+		<script src="resources/scripts/bootstrap.min.js" ></script>
+		<script	src="resources/scripts/angular.min.js"  ></script>
+		<script	src="resources/scripts/angular-ui-router.js"  ></script>
+		
+		<script	src="resources/scripts/app/category-list/category-list.module.js"  ></script>	
+		<script	src="resources/scripts/app/category-list/category-list.component.js" ></script>
+		<script	src="resources/scripts/app/brand-list/brand-list.module.js"  ></script>
+		<script	src="resources/scripts/app/brand-list/brand-list.component.js" ></script>
+		<script	src="resources/scripts/app/item-list/item-list.module.js"  ></script>
+		<script	src="resources/scripts/app/item-list/item-list.component.js"  ></script>
+		<script	src="resources/scripts/app/app.module.js"  ></script>
+        <script	src="resources/scripts/app/app.config.js" ></script>
+			
+			
+	</head>
+	<body>
+		<div ui-view="category"></div>
+		<div ui-view="brand"></div>
+		<div ui-view="item"></div>
+	</body>
+</html>

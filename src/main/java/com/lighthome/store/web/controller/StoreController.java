@@ -26,7 +26,7 @@ public class StoreController {
 	
 	@GetMapping(value="/")
 	public String home(Locale locale, Model model) {
-		return "home";
+		return "static/home.html";
 	}
 	
 	@GetMapping(value="/category", produces="application/json")
@@ -35,41 +35,6 @@ public class StoreController {
 		List<ItemsCategory> itemsCategory = itemsCategoryService.findAll();
 		return new ItemCategoriesInfo(itemsCategory);
 	}
-	
-//	@GetMapping(value ="/category/{category}")
-//	public String getBrandsInfo(@PathVariable("category") Long categoryid, Model model) {
-//			
-//		List<Brand> brands = itemsCategoryService.getBrandsByCategoryID(categoryid);
-//		model.addAttribute("brands", brands);
-//		
-//		List<ItemsCategory> itemsCategory = itemsCategoryService.findAll();
-//		model.addAttribute("itemsCategory", itemsCategory);
-//		
-//		model.addAttribute("category", categoryid);
-//		
-//		return "home";
-//	}
-	
-//	@GetMapping(value ="/category/{category}/brand/{brand}")
-//	public String getItemsByCategoryIdAndBrandId(@PathVariable("category") Long categoryId,
-//			@PathVariable("brand") Long brandId, Model model) {
-//			
-//		List<Brand> brands = itemsCategoryService.getBrandsByCategoryID(categoryId);
-//		model.addAttribute("brands", brands);
-//		
-//		for (Brand b: brands)
-//			if (b.getId() == brandId)
-//				model.addAttribute("brand", b);
-//		
-//		List<ItemsCategory> itemsCategory = itemsCategoryService.findAll();
-//		model.addAttribute("itemsCategory", itemsCategory);
-//		
-//		List<Items> items = itemsCategoryService.getItemsByCategoryIdAndBrandId(categoryId, brandId);
-//		model.addAttribute("items", items);
-//		
-//		
-//		return "home";
-//	}
 	
 	@GetMapping(value ="/category/{category}", produces="application/json")
 	@ResponseBody
