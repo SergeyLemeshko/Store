@@ -2,11 +2,11 @@
   	<div class="row row-offcanvas row-offcanvas-left">
 		<div class="col-xs-12 col-sm-9" >
 			<div id="brandDescription">
-				<div class="jumbotron"><p>{{description}}</p></div>
+				<div class="jumbotron"><p>{{$ctrl.description}}</p></div>
 			</div>
 			<div class="row" >
-				<div class="col-sm-6 col-md-3" ng-repeat="item in items">
-					<a class="thumbnail" data-toggle="modal" data-target="#myModal" ng-click = "setCurrentItem(item)">
+				<div class="col-sm-6 col-md-3" ng-repeat="item in $ctrl.items">
+					<a class="thumbnail" data-toggle="modal" data-target="#myModal" ng-click = "$ctrl.setCurrentItem(item)">
 						<img class="itemSmallImage" src="resources/images/{{item.image}}"   alt="...">
 				    	<div class="caption">
 				        	<h3>{{item.name}}</h3> 
@@ -27,10 +27,10 @@
 					aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title" id="myModalLabel">{{currentItem.name}}</h4>
+				<h4 class="modal-title" id="myModalLabel">{{$ctrl.currentItem.name}}</h4>
 			</div>
 			<div class="modal-body">
-				<img class="center-block itemSmallImage" id="myModalImage" src="resources/images/{{currentItem.image}}" alt="...">
+				<img class="center-block itemSmallImage" id="myModalImage" src="resources/images/{{$ctrl.currentItem.image}}" alt="...">
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary"
 						data-dismiss="modal">Close</button>
