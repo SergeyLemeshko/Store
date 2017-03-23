@@ -2,7 +2,7 @@ angular.
 	module('categoryList', ['ui.router']).
 	component('categoryList', {
 		templateUrl:"resources/scripts/app/category-list/categories_template.html",
-		controller: function CategoryListController($http, $stateParams) {
+		controller: function ($http, $stateParams) {
 			
 			var self = this;
 			

@@ -2,7 +2,7 @@ angular.
 	module('brandList', ['ui.router']).
 	component('brandList', {
 		templateUrl:"resources/scripts/app/brand-list/brand_list_template.html",
-		controller: function BrandListController($stateParams, $http) {
+		controller: function ($stateParams, $http) {
 			
 			var self = this;
 			

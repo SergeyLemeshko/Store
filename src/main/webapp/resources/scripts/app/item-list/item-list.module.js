@@ -1,1 +1,1 @@
-angular.module('itemList', ['ui.router']);
+angular.module('itemList', ['ui.router', 'Items']);

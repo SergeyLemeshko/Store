@@ -1,4 +1,4 @@
-angular.module('storeApp', ['ui.router', 'categoryList','brandList','itemList']);
+angular.module('storeApp', ['ui.router', 'categoryList','brandList','itemList','storeApp.item']);
 
 
 

@@ -1,5 +1,5 @@
 angular.
-	module('storeApp', ['ui.router', 'categoryList','brandList', 'itemList']).
+	module('storeApp', ['ui.router', 'categoryList','brandList', 'itemList','storeApp.item']).
 		config(function config($stateProvider, $urlRouterProvider) {
 			
 				$urlRouterProvider.otherwise('/');
